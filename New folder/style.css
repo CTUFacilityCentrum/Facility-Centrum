@@ -1,0 +1,383 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+
+/* general style */
+section{
+  padding: 0px 0;
+}
+.max-width{
+  /*max-width: 1300px;*/
+  padding: 0 80px;
+  margin: auto;
+}
+.slider .about, .rates .amenities .contact .faqs{
+  font-family: 'Rubik', sans-serif;
+}
+.slider .slider-content,
+.about .about-content,
+.rates .rates-content,
+.amenities .amenities-content,
+.contact .contact-content,
+.faqs .faqs-content{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*navgar content with FIXED position*/
+.navbar{
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  padding: 15px 0;
+ background-color:rgba(255, 255, 255, 0.503);
+  font-family: Rubik;
+  transition: all 0.3s ease;
+}
+
+.navbar.sticky{
+  float: right;
+  padding: 5px 0;
+  background: #eed134;
+}
+.navbar.sticky .logo a:hover{
+  color: white;
+
+}
+.navbar .max-width{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .logo a{
+ padding: 0 34px 0;
+  color: #032c5c;
+  font-size: 30px;
+  font-weight: 600;
+  display: block;
+
+}
+.navbar .logo a:hover{
+  color: #eed134;
+  text-shadow: 1px 1px 2px #032c5c;
+  transition: all 0.3s ease;
+}
+
+.navbar .menu li{
+  list-style: none;
+  display: inline-block;
+}
+.navbar .menu li a{
+  float: right;
+  display: block;
+  color: #032c5c;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+  color: #eed134;
+  text-shadow: 1px 1px 2px #032c5c;
+}
+.navbar.sticky .menu li a:hover{
+  color: #fff;
+}
+.menu-btn{
+  color: #fff;
+  font-size: 23px;
+  cursor: pointer;
+  display: none;
+}
+.menu li a.icon{
+  display: none;
+}
+
+/*media for  responsive navnar*/
+@media screen and (max-width: 1200px) {
+ .navbar .menu li a:not(:first-child) {display: none;}
+ .navbar .menu li a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .navbar .menu li .responsive {position: relative;}
+  .navbar .menu li .responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navbar .menu li .responsive a {
+    float: none;
+    display: block;
+    text-align: right;
+  }
+}
+
+/*Form on Image*/
+
+  .bg-img {
+    /* The image used */
+    background-color: rgb(0, 0, 0);
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  /* Add styles to the form container */
+  .container {
+    position: absolute;
+    left: 200px;
+    margin-top: 0px;
+    max-width: 250px;
+    padding: 100px 15px 20px 15px;
+    background-color: #00000080;
+  color:white;
+  font-family:Rubik;
+  }
+  
+  /* Full-width input fields */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+  * {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: auto;
+  position: relative;
+  margin: auto;
+  height:100%;
+}
+.slide-overlay{
+  opacity: 0.2;
+  background-color: #00132a;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 1vw 2vw;
+  margin-top: -22px;
+  margin-left: 40px;
+  color: #032c5c;
+  font-weight: bold;
+  font-size: 2vw;
+  transition: 0.6s ease;
+  border-radius: 50%;
+  user-select: none;
+  border:solid 1.5px #032c5c;
+  opacity: 100%;
+}
+.prev:hover, .next:hover{
+  transition-duration: 0ms;
+  opacity:100%;
+  color: white;
+  border: solid 1.5px white;
+}
+
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 50%;
+  border:solid 1px #032c5c;
+  margin-right:40px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: transparent;
+}
+
+/* Gret for all types of events and occasions */
+.text {
+  color: #032c5c;
+  font-size: 25px;
+  padding: 8px 12px;
+  position: absolute;
+  font-family: 'Raleway';
+  text-align: center;
+  left: 1%;
+}
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 600px) {
+  .text{
+    font-size: 15px;
+    top: 120px;
+  }
+}
+
+/* GREAT FOR EVENTS */
+.numbertext {
+  color: #032c5c;
+  font:bold;
+  font-family: 'Rubik';
+  font-size: 50px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 30%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align:center;
+}
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 600px) {
+  .numbertext{
+    font-size: 20px;
+    
+  }
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 600px) {
+  .prev, .next {
+    font-size: 11px;
+  }
+}
+
+.btn {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: rgba(3, 44, 92, 0.1);
+  color: #032c5c;
+  font-size: 18px;
+  padding: 12px 24px;
+  border: solid 1.5px;
+  border:solid 2px #032c5c;
+  cursor: pointer;
+  border-radius: 50px;
+  text-align: center;
+}
+.btn:hover {
+  background-color: #032c5c;
+  color:white;
+}
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 600px) {
+  .btn {
+    font-size: 11px;
+    padding: 10px 20px;
+  }
+}
+.paragraph{
+  background-color: #eed134;
+  font-family: 'Karla', sans-serif;
+  font-size: 25px;
+  padding: 50px 30px;
+  text-align: center;
+  color: #032c5c;
+}
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 600px) {
+  .paragraph {
+    font-size: 11px;
+  }
+}
+
+div.gallery {
+  
+  background-color: #eed234;
+  border-radius: 15px 15px 0px 0px;
+  margin: 60px 20px;
+}
+
+div.gallery:hover {
+  border: 2px solid #032c5c;
+
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px 15px 0px 0px;
+}
+
+div.desc {
+  font-family: Rubik;
+  padding: 15px;
+  text-align: center;
+  color:#032c5c;
+  font-weight: 400;
+}
+div.desc:hover{
+  font-weight: 600;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
